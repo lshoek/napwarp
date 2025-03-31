@@ -1,4 +1,4 @@
 # napwarp
-NAP modules that warps 2D images
+NAP module that warps 2D images
 
 ![](preview.jpg)
