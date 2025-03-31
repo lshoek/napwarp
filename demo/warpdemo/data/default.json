@@ -1,0 +1,249 @@
+{
+    "Objects": [
+        {
+            "Type": "nap::Entity",
+            "mID": "CameraEntity",
+            "Components": [
+                {
+                    "Type": "nap::TransformComponent",
+                    "mID": "CameraTransform",
+                    "Properties": {
+                        "Translate": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "Rotate": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "Scale": {
+                            "x": 1.0,
+                            "y": 1.0,
+                            "z": 1.0
+                        },
+                        "UniformScale": 1.0
+                    }
+                },
+                {
+                    "Type": "nap::OrthoCameraComponent",
+                    "mID": "OrthoCamera",
+                    "Properties": {
+                        "Mode": "PixelSpace",
+                        "LeftPlane": 0.0,
+                        "RightPlane": 1.0,
+                        "TopPlane": 1.0,
+                        "BottomPlane": 0.0,
+                        "NearClippingPlane": 0.10000000149011612,
+                        "FarClippingPlane": 1.0,
+                        "ClipRect": {
+                            "Min": {
+                                "x": 0.0,
+                                "y": 0.0
+                            },
+                            "Max": {
+                                "x": 1.0,
+                                "y": 1.0
+                            }
+                        }
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Type": "nap::Entity",
+            "mID": "WarpEntity",
+            "Components": [
+                {
+                    "Type": "nap::TransformComponent",
+                    "mID": "TransformWarp",
+                    "Properties": {
+                        "Translate": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "Rotate": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "Scale": {
+                            "x": 1.0,
+                            "y": 1.0,
+                            "z": 1.0
+                        },
+                        "UniformScale": 1.0
+                    }
+                },
+                {
+                    "Type": "nap::RenderWarpTexture",
+                    "mID": "RenderWarp",
+                    "Visible": true,
+                    "Tags": [],
+                    "Layer": "",
+                    "Texture": "LogoImage",
+                    "RenderBorder": true,
+                    "RenderGrid": true
+                },
+                {
+                    "Type": "nap::UpdateHomographyComponent",
+                    "mID": "UpdateHomography",
+                    "TopLeft": "TopLeft",
+                    "TopRight": "TopRight",
+                    "BottomLeft": "BottomLeft",
+                    "BottomRight": "BottomRight"
+                },
+                {
+                    "Type": "nap::WarpComponent",
+                    "mID": "Warp",
+                    "TopLeft": {
+                        "x": 0.0,
+                        "y": 1.0
+                    },
+                    "TopRight": {
+                        "x": 1.0,
+                        "y": 1.0
+                    },
+                    "BottomRight": {
+                        "x": 1.0,
+                        "y": 0.0
+                    },
+                    "BottomLeft": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "SourceWidth": 1024.0,
+                    "SourceHeight": 1024.0,
+                    "ReferenceTexture": "LogoImage"
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Type": "nap::HomographyShader",
+            "mID": "WarpShader"
+        },
+        {
+            "Type": "nap::ImageFromFile",
+            "mID": "LogoImage",
+            "Usage": "Static",
+            "ImagePath": "naplogo.jpg",
+            "GenerateLods": true
+        },
+        {
+            "Type": "nap::Material",
+            "mID": "WarpMaterial",
+            "Uniforms": [],
+            "Samplers": [],
+            "Buffers": [],
+            "Constants": [],
+            "Shader": "WarpShader",
+            "VertexAttributeBindings": [],
+            "BlendMode": "Opaque",
+            "DepthMode": "InheritFromBlendMode"
+        },
+        {
+            "Type": "nap::ParameterGUI",
+            "mID": "ParameterGUI",
+            "Serializable": true,
+            "Group": "Parameters"
+        },
+        {
+            "Type": "nap::ParameterGroup",
+            "mID": "Parameters",
+            "Parameters": [
+                {
+                    "Type": "nap::ParameterVec2",
+                    "mID": "TopLeft",
+                    "Name": "TopLeft",
+                    "Value": {
+                        "x": 0.0,
+                        "y": 1024.0
+                    },
+                    "Clamp": true,
+                    "Minimum": 0.0,
+                    "Maximum": 1024.0
+                },
+                {
+                    "Type": "nap::ParameterVec2",
+                    "mID": "TopRight",
+                    "Name": "TopRight",
+                    "Value": {
+                        "x": 1024.0,
+                        "y": 1024.0
+                    },
+                    "Clamp": true,
+                    "Minimum": 0.0,
+                    "Maximum": 1024.0
+                },
+                {
+                    "Type": "nap::ParameterVec2",
+                    "mID": "BottomRight",
+                    "Name": "BottomRight",
+                    "Value": {
+                        "x": 1024.0,
+                        "y": 0.0
+                    },
+                    "Clamp": true,
+                    "Minimum": 0.0,
+                    "Maximum": 1024.0
+                },
+                {
+                    "Type": "nap::ParameterVec2",
+                    "mID": "BottomLeft",
+                    "Name": "BottomLeft",
+                    "Value": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "Clamp": true,
+                    "Minimum": 0.0,
+                    "Maximum": 1024.0
+                }
+            ],
+            "Groups": []
+        },
+        {
+            "Type": "nap::RenderWindow",
+            "mID": "Window",
+            "Borderless": false,
+            "Resizable": true,
+            "Visible": true,
+            "SampleShading": true,
+            "Title": "Warp Demo",
+            "Width": 1024,
+            "Height": 1024,
+            "Mode": "Immediate",
+            "ClearColor": {
+                "Values": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "Samples": "Four",
+            "AdditionalSwapImages": 1,
+            "Clear": true,
+            "RestoreSize": true,
+            "RestorePosition": true
+        },
+        {
+            "Type": "nap::Scene",
+            "mID": "Scene",
+            "Entities": [
+                {
+                    "Entity": "CameraEntity",
+                    "InstanceProperties": []
+                },
+                {
+                    "Entity": "WarpEntity",
+                    "InstanceProperties": []
+                }
+            ]
+        }
+    ]
+}

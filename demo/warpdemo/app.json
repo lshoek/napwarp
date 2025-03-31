@@ -1,0 +1,14 @@
+{
+    "Type": "nap::ProjectInfo",
+    "mID": "ProjectInfo",
+    "Title": "WarpDemo",
+    "Version": "1.0.0",
+    "Data": "data/default.json",
+    "PathMapping": "cache/path_mapping.json",
+    "ServiceConfig": "service_config.json",
+    "RequiredModules": [
+        "napwarpdemo",
+        "napapp",
+        "napparametergui"
+    ]
+}

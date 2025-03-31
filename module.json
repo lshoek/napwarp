@@ -1,0 +1,13 @@
+{
+    "Type": "nap::ModuleInfo", 
+    "mID": "ModuleInfo", 
+    "RequiredModules": [
+        "naprenderadvanced",
+        "napopencv"
+    ], 
+    "WindowsDllSearchPaths": [],
+    "DataSearchPaths": [
+        "{ROOT}/modules/napwarp/data"
+    ],
+    "DemoApp": "warpdemo"
+}
