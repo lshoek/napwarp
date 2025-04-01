@@ -10,7 +10,9 @@ NAP module that warps 2D images
 - Run `tools/setup_module.sh napwarp` to add it to the solution. You will be prompted to setup the included optional demo project.
 - Clone the `naivisoftware/napopencv` repository into the `modules` directory. Run `tools/setup_module.sh naptween` to add it to the solution.
 tween` to add it to the solution.
-- Now, the `solution_info.json` should look something like this : `{
+- Now, the `solution_info.json` should look something like this : 
+```
+{
     "Type": "nap::SolutionInfo",
     "mID": "SolutionInfo",
     "AdditionalTargets": [
@@ -18,7 +20,8 @@ tween` to add it to the solution.
         "modules/napwarp",
         "modules/napopencv"
     ]
-}`
+}
+```
 
 Open a terminal and run `generate_solution.bat` or `sh generate_solution.sh` to generate the solution for your platform. This application is only compatible with NAP 0.8 mentioned above, and should be built from source, not package.
 
