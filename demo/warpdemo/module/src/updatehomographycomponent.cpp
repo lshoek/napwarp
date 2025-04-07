@@ -42,8 +42,8 @@ namespace nap
 		mResource = getComponent<UpdateHomographyComponent>();
 
 		// Ensure there is a transform component
-		mHomographyComponent = getEntityInstance()->findComponent<WarpComponentInstance>();
-		if (!errorState.check(mHomographyComponent != nullptr, "%s: missing homography component", mID.c_str()))
+		mWarper = getEntityInstance()->findComponent<WarpComponentInstance>();
+		if (!errorState.check(mWarper != nullptr, "%s: missing warp component", mID.c_str()))
 			return false;
 
         return true;
@@ -52,9 +52,9 @@ namespace nap
 
     void UpdateHomographyComponentInstance::update(double deltaTime)
     {
-		mHomographyComponent->setTopLeft(mResource->mTopLeft->mValue);
-		mHomographyComponent->setTopRight(mResource->mTopRight->mValue);
-		mHomographyComponent->setBottomLeft(mResource->mBottomLeft->mValue);
-		mHomographyComponent->setBottomRight(mResource->mBottomRight->mValue);
+		mWarper->setTopLeft(mResource->mTopLeft->mValue);
+		mWarper->setTopRight(mResource->mTopRight->mValue);
+		mWarper->setBottomLeft(mResource->mBottomLeft->mValue);
+		mWarper->setBottomRight(mResource->mBottomRight->mValue);
     }
 }

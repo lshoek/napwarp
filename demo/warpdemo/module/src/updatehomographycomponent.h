@@ -47,6 +47,6 @@ namespace nap
         virtual void update(double deltaTime) override;
 
 		UpdateHomographyComponent* mResource = nullptr;
-		WarpComponentInstance* mHomographyComponent = nullptr;
+		WarpComponentInstance* mWarper = nullptr;
 	};
 }
