@@ -49,6 +49,9 @@ namespace nap
 
 	void WarpComponentInstance::update(double deltaTime)
 	{
+		if (!mDirty)
+			return;
+
 		const std::vector<cv::Point2f> source_points =
 		{
 			{ 0.0f,				mSourceSize.y },
@@ -80,5 +83,8 @@ namespace nap
 		// Invert and copy
 		cv::invert(xform, xform);
 		std::memcpy(glm::value_ptr(mInverseHomographyMatrix), xform.data, xform.total() * xform.elemSize());
+
+		// Reset dirty flag
+		mDirty = false;
 	}
 }
