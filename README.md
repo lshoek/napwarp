@@ -8,8 +8,7 @@ NAP module that warps 2D images
 - Make sure to clone the `napframework/nap` repository and checkout the `0.8` branch.
 - Clone the `lshoek/napwarp` repository into the `modules` directory of the NAP source root.
 - Run `tools/setup_module.sh napwarp` to add it to the solution. You will be prompted to setup the included optional demo project.
-- Clone the `naivisoftware/napopencv` repository into the `modules` directory. Run `tools/setup_module.sh naptween` to add it to the solution.
-tween` to add it to the solution.
+- Clone the `naivisoftware/napopencv` repository into the `modules` directory. Run `tools/setup_module.sh napopencv` to add it to the solution.
 - Now, the `solution_info.json` should look something like this : 
 ```
 {
