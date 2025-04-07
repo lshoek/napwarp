@@ -1,6 +1,8 @@
 # napwarp
 NAP module that warps 2D images
 
+*Disclaimer: This module was quickly derived from another personal project of mine and requires further development.*
+
 ![](preview.jpg)
 
 ## Build
@@ -33,7 +35,7 @@ Inside the newly created NAP package, navigate to the `projects/napwarpdemo` dir
 ## Run
 To run `napwarpdemo` on a client machine without a development environment, do the following:
 
-### Ubuntu 20.04
+### Ubuntu 20.04 (and higher)
 
 Make sure your GPU drivers are up to date and they support Vulkan.
 
